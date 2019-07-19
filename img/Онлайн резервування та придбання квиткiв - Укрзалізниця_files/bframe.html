@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="uk"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>reCAPTCHA</title>
+<style type="text/css">
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7WxKOzY.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCRc4EsA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fABc4EsA.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCBc4EsA.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBxc4EsA.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCxc4EsA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fChc4EsA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Roboto Black'), local('Roboto-Black'), url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCRc4EsA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Roboto Black'), local('Roboto-Black'), url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfABc4EsA.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Roboto Black'), local('Roboto-Black'), url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCBc4EsA.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Roboto Black'), local('Roboto-Black'), url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfBxc4EsA.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Roboto Black'), local('Roboto-Black'), url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCxc4EsA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Roboto Black'), local('Roboto-Black'), url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfChc4EsA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Roboto Black'), local('Roboto-Black'), url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfBBc4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+</style>
+<link rel="stylesheet" type="text/css" href="bframe_data/styles__ltr.css">
+
+<script type="text/javascript" src="recaptcha__uk.js" nonce="bRYnFicSQXH7V8+g8OkoMw">
+      
+    </script><meta class="CryptoPluginExtensionLoaded" content="1.0.2"><script type="text/javascript" charset="UTF-8" src="bframe_data/tQKLZa6Mt6gQsjPt5mUagp-391MDmvu-7ybxCqzztRI.js" nonce="bRYnFicSQXH7V8+g8OkoMw"></script></head>
+<body><input type="hidden" id="recaptcha-token" value="03AOLTBLTR7Gj6ojvE9UU8Rk41ffwis3MrGh1BRBs-BqdD9d_LxXCbSsP7o4GfSPN2yWG_XRbNna1QiiVH-TzDfPz3UD4J4eR027FMkuslSNiaSmdX2_ucmgGO9nvGxaGV4J7__IfkRMWXOl7j8mXRDQnUQzRtoKFX1zTJESx_b0lmScBha1sH2LeddXoy3Rb339dM1EaYJQ7DBTC94rFSYgOLyYdMPRpaNDlmd5dUqw1OMEoJyEt_TrAIdBOgURnhP-CxakXHAexDyXGDxbB73euIJ04S711LxlSouFr5idSmAh4yZhshknZJbB0WhQFE-AcljCGMbuaYLLZprLdX6fvf5Ym5m2AaeSpfbhnK_VYVJ4Kzl6a7tS-z_JwfN5qSCKekI7AErFP0VjRkMpFE0oK1wvAJIgy1EJ2jAL5HnQqjdOU36JLN4HIY4YymfSa5Na0i7xqA_x2enSODEDuVnA6h1A3U-rvFGV_s1O7eITz6PdRDuOtflrJGNJ9M-q7ZYoy2Ojnn4v3_lLYiF1DBPC2MCbVaVGdHApaSdh2zDcVDewGqycvGt7x8mxNCdqLWlP1pqFG8yxgzJyjzj6Y7tJ2r1iwdM3hpu4bZrTyBlerurvws2EowJDOY9YVnco0n_MCBemy5aGZAKmNNEYBOJHOW99Kc1fW8tvku0ardv90NQYYwi6d4H0J50K4B5lnYYtvjHLvHeSkmyxIivCbBpu6Rwn8JMkO_Jaevqc0a9zeGgKPgAGvLrTnabq0uW1kYRzQWaeBUI5yrdCOiZ3Vp3NFlNPnyHBs4LJ5hBxO-LiHXHgxD8Gi31f5M64jzYKpEMOAUjJVf8l3rlB4wgWxZx21eVBR1H2PnxjC7oQ13g6dYSZ-o5kstN-CsWP8OuCY4aLqo9DFeDhNgCy9g3auRCuu_WhtWm1PLyt7xJ0LMDqeFUp1tMkfL3vcnItXt9XuZB1079GvxaeNcwGPxvjK80u9OnhOPQeIF7hX7RvHuEBhJWABL2TgKGY2O9EYHDOJU1P-jegM0eltWW4hQRAvRSt8ImoE1ac7fPXsj8xihYUQAAJ5mpq11gJ2CAnOFbk21yFw79_VnPi_WTNw80a9FuXouI7YvhPyS7QVUBPVMbOQLKDfDMbikpESRplR49_xtukHN7hE-njOWKsAE2D39teAG9PyJ1ONU3dt0HXTzYigrLCX1-1fUdVlm5u3YH_OB2HDYXs0KIfDdkDkVm_Pgfkfx1I7_IusxDsQLa8msgD3e27VscZYj9J6q5S_yq-hs4Bt8-aaPJ0kPzI3aopL6QVmNQz4lal9lcegeFw3pnA5iaz6EyEQVie2NgDxfn7QEUoHgsyuQF_teN844ZZBl_OeOUssekuVenT9Maz1M_khofPV28ZfpVRk9oaPy-os4JVIdP5qbZc5N81imaKgJVIvIPJsugJVuK1dm-lqc11w5_tBtJuaEWvpluSoPX1DQWrhqtEfZ6yTJ5og0EKXxY7noQtTbih3h4UFwR99jRs9MO_xiTTzr9YiPL2KYVkZ2ftfHBhnKEZP1Td8f88Wv4ilXNqpQZpZ1FmonU08KFT1KGuhz2JJ2twGVVxVvT1m2h4o5rQW85S3SjC1V3Xjeoc782gBgkGIKS8GvuRb6vTK5hUVUsN4iVf70zd6-8A5QEeHYkdD32IR2AG9XCOe-urE5xOwvHeeZqIZDFFj-FSz_N_RyC0RJY7R6RicXIHJUmkciThyq69OtmNVFjcWnZtYKKcr7XmOge3OdER-i1quDmuY9DB6QTueJvJepyIEBcWg74F9Bm3lrZeL_PqQei15mmhzqCMUDSZRCBq8HbVAvLtBq7nBMQUrc4z7_LRacZf6oDrpIFmX0">
+<script type="text/javascript" nonce="bRYnFicSQXH7V8+g8OkoMw">
+      
+        recaptcha.frame.Main.init("[\x22finput\x22,null,[\x22conf\x22,null,\x226LeNkKoUAAAAACciOzccHLPuCS9aFEHPa3Taz4Zf\x22,0,null,[\x22JS_FASTCLICK\x22,\x22JS_MC_FETCH\x22,\x22JS_BR\x22]\n,0.75]\n]\n");
+      
+    </script><div style=""><div class="rc-footer"><div class="rc-separator"></div><div class="rc-controls"><div class="primary-controls"><div class="rc-buttons"><div class="button-holder reload-button-holder"><button class="rc-button goog-inline-block rc-button-reload" title="Отримати новий код" value="" id="recaptcha-reload-button" tabindex="0"></button></div><div class="button-holder audio-button-holder"><button class="rc-button goog-inline-block rc-button-audio" title="Прослухати код" value="" id="recaptcha-audio-button" tabindex="0"></button></div><div class="button-holder image-button-holder"><button class="rc-button goog-inline-block rc-button-image" title="Показати текст" value="" style="display: none;" id="recaptcha-image-button" tabindex="0"></button></div><div class="button-holder help-button-holder"><button class="rc-button goog-inline-block rc-button-help" title="Довідка" value="" id="recaptcha-help-button" tabindex="0"></button></div><div class="button-holder undo-button-holder"><button class="rc-button goog-inline-block rc-button-undo" title="Скасувати" value="" style="display: none;" id="recaptcha-undo-button" tabindex="0"></button></div></div><div class="verify-button-holder"><button class="rc-button-default goog-inline-block" title="" value="" id="recaptcha-verify-button" tabindex="0">Підтвердити</button></div></div><div class="rc-challenge-help" style="display:none" tabindex="0"></div></div></div></div></body></html>
